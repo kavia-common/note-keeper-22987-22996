@@ -28,9 +28,11 @@ urlpatterns = [
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="My API",
+      title="Ocean Professional Notes API",
       default_version='v1',
-      description="Test description",
+      description="Clean, modern REST API for creating and managing notes.",
+      contact=openapi.Contact(name="Notes API Team", email="support@example.com"),
+      license=openapi.License(name="MIT"),
    ),
    public=True,
    permission_classes=(permissions.AllowAny,),
@@ -51,9 +53,11 @@ def dynamic_schema_view(request, *args, **kwargs):
     url = get_full_url(request)
     view = get_schema_view(
         openapi.Info(
-            title="My API",
+            title="Ocean Professional Notes API",
             default_version='v1',
-            description="API Docs",
+            description="Interactive API documentation for the Notes service.",
+            contact=openapi.Contact(name="Notes API Team", email="support@example.com"),
+            license=openapi.License(name="MIT"),
         ),
         public=True,
         url=url,
